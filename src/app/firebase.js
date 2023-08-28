@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { collection, doc, getDoc, getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -17,7 +17,18 @@ const app = initializeApp(firebaseConfig);
 var firestore = getFirestore();
 
 
-export default function Test() {
-  console.log(firestore);
+export default async function Test() {
+  const stemmeneRef = collection(firestore, "Stemmene");
+
+  const sigurdRef = doc(stemmeneRef, "Sigurd");
+  const sigurd = await getDoc(sigurdRef);
+  if (!sigurd.exists()) {
+    console.log("Doesn't exist");
+    return;
+  }
+
+  const data = sigurd.data();
+  console.log(data);
+
 }
 
