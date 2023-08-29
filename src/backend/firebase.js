@@ -36,6 +36,12 @@ export async function vote(person, mail) {
   const stemmeneRef = collection(firestore, "Stemmene");
   const stemmereRef = collection(firestore, "Stemmere");
 
+  const osloskolenEmailPattern = /^[a-z]{5}\d{3}@osloskolen\.no$/;
+  if (!osloskolenEmailPattern.test(mail)) {
+    console.log("Mailen er ikke en skole mail");
+    return;
+  }
+
   // check if mail has already voted
   const mailRef = doc(stemmereRef, mail);
   const mailDoc = await getDoc(mailRef);

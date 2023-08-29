@@ -4,7 +4,7 @@ import { Test, getPeople, vote } from '../backend/firebase'
 
 
 export default function Home() {
-  vote("Sigurd", "stemmer@mail.com");
+  vote("Sigurd", "vihaa011@osloskolen.no");
   return (
     <div></div>
   )
