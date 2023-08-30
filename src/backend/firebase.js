@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { collection, doc, getDoc, getDocs, getFirestore, updateDoc, setDoc } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs, getFirestore, updateDoc, setDoc, addDoc, deleteDoc } from "firebase/firestore";
+import { Coiny } from "next/font/google";
 
 
 const firebaseConfig = {
@@ -17,33 +18,16 @@ const app = initializeApp(firebaseConfig);
 var firestore = getFirestore();
 
 
-export async function Test() {
-  const stemmeneRef = collection(firestore, "Stemmene");
-
-  const sigurdRef = doc(stemmeneRef, "Sigurd");
-  const sigurd = await getDoc(sigurdRef);
-  if (!sigurd.exists()) {
-    console.log("Doesn't exist");
-    return;
-  }
-
-  const data = sigurd.data();
-  console.log(data);
-
+function getPrefix(code) {
+  const [prefix] = code.split(/(?=\d)/);
+  return prefix;
 }
 
-export async function vote(person, mail) {
+
+export async function vote(person, kode) {
   const stemmeneRef = collection(firestore, "Stemmene");
-  const stemmereRef = collection(firestore, "Stemmere");
+  const koderRef = collection(firestore, "Koder");
 
-  // check if mail has already voted
-  const mailRef = doc(stemmereRef, mail);
-  const mailDoc = await getDoc(mailRef);
-
-  if (mailDoc.exists()) {
-    console.log("Du har stemt allerede!");
-    return
-  }
 
   // check if person is real
   const personRef = doc(stemmeneRef, person);
@@ -54,22 +38,29 @@ export async function vote(person, mail) {
     return;
   }
 
+  const kodeRef = doc(koderRef, kode);
+  const kodeDoc = await getDoc(kodeRef);
 
-  const stemmer = personDoc.data().stemmer;
-  console.log("stemmer: %d", stemmer);
+  if (!kodeDoc.exists()) {
+    console.log("Koden finnes ikke");
+    return;
+  }
 
-  // add mail to voters
+  // slett kode
   try {
-    await setDoc(mailRef, {});
+    await deleteDoc(kodeRef);
   }
   catch(error) {
     console.log(error);
     return;
   }
 
+  const stemmer = personDoc.data().stemmer;
+  console.log("stemmer: %d", stemmer);
+
   // add vote
   try {
-    updateDoc(personRef, {
+    await updateDoc(personRef, {
       "stemmer": stemmer + 1
     })
 
