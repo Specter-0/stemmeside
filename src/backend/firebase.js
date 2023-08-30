@@ -18,9 +18,12 @@ const app = initializeApp(firebaseConfig);
 var firestore = getFirestore();
 
 
-function getPrefix(code) {
-  const [prefix] = code.split(/(?=\d)/);
-  return prefix;
+export async function validate_code(kode) {
+  const koderRef = collection(firestore, "Koder");
+  const kodeRef = doc(koderRef, kode);
+  const kodeDoc = await getDoc(kodeRef);
+  
+  return kodeDoc.exists() 
 }
 
 

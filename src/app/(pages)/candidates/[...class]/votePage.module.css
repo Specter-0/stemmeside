@@ -1,0 +1,41 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+.candidates {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   gap: 50px;
+   justify-content: center;
+}
+
+.codeContainer {
+   background: linear-gradient(-35deg, rgb(87, 178, 209), rgb(0, 125, 203));
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-around;
+   margin: 30px;
+   width: 250px;
+   height: 90px;
+   border: solid;
+   border-radius: 5px;
+   border-width: 5px;
+   border-color: rgb(87, 178, 255);
+   color:whitesmoke;    
+}
+
+.codeContainer p {
+   font-size: 25px;
+}
+
+.codeContainer h1 {
+   font-size: 30px;
+   border-bottom: solid;
+   border-color: aquamarine;
+   border-width: 3px;
+}

@@ -1,0 +1,26 @@
+.container {
+    color:inherit;
+}
+
+.button {
+    cursor: pointer;
+    width: 190px;
+    height: 80px;
+    color: whitesmoke;
+    background-color: #ffd100;
+    font-size: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+    border: solid;
+    border-radius: 5px;
+    border-width: 7px;
+    border-color: #ffa100;
+    transition: 0.5s;
+}
+
+.button:hover {
+    border-radius: 20px;
+    font-size: 40px;
+}
+
