@@ -1,0 +1,7 @@
+.container {
+    height: 50px;
+    font-size: small;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

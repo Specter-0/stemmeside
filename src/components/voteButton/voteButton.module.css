@@ -1,0 +1,30 @@
+.container {
+    color: inherit;
+}
+
+.button {
+    cursor: pointer;
+    width: 60vh;
+    height: 17vh;
+    background-color: #ffd100; 
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 
+    ease-out
+    width 1s, 
+    height 1s,
+    font-size 1s,
+    letter-spacing 3s,
+    ;
+}
+
+.button:hover {
+    width: 65vh;
+    height: 20vh;
+    font-size: 95px;
+    letter-spacing: 60px;
+}
