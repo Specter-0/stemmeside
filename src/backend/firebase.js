@@ -17,6 +17,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 var firestore = getFirestore();
 
+
+function getPrefix(code) {
+  const [prefix] = code.split(/(?=\d)/);
+  return prefix;
+}
+
+
 export async function vote(person, kode) {
   const stemmeneRef = collection(firestore, "Stemmene");
   const koderRef = collection(firestore, "Koder");
