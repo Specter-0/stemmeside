@@ -37,16 +37,14 @@ export async function vote(person, kode) {
   const personDoc = await getDoc(personRef);
 
   if (!personDoc.exists()) {
-    console.log("Person finnes ikke");
-    return;
+    return "Person finnes ikke";
   }
 
   const kodeRef = doc(koderRef, kode);
   const kodeDoc = await getDoc(kodeRef);
 
   if (!kodeDoc.exists()) {
-    console.log("Koden finnes ikke");
-    return;
+    return "Koden finnes ikke";
   }
 
   // slett kode
@@ -54,8 +52,7 @@ export async function vote(person, kode) {
     await deleteDoc(kodeRef);
   }
   catch(error) {
-    console.log(error);
-    return;
+    return error;
   }
 
   const stemmer = personDoc.data().stemmer;
@@ -72,7 +69,7 @@ export async function vote(person, kode) {
     console.log(error);
   }
 
-  console.log("her");
+  return 1;
 }
 
 

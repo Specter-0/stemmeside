@@ -1,10 +1,10 @@
-import Image from "next/image"
 import styles from "./votePage.module.css"
 import React from 'react'
-import SCButton from "@/components/SCButton/SCButton"
+import { useEffect } from "react"
 import Candidate from "@/components/candidate/Candidate"
+import { validate_code } from "@/backend/firebase"
 
-const votePage = ({ params }) => {
+const votePage = ({ params }) => {  
   return (
     <div className={styles.container}>
         <div className={styles.codeContainer}>
@@ -12,12 +12,12 @@ const votePage = ({ params }) => {
           <p>{params.class}</p>
         </div>
         <div className={styles.candidates}>
-          <Candidate src="/john.jpeg" name="john" key={params.class} />
-          <Candidate src="/tech-support.jpeg" name="tech-support" key={params.class}/>
-          <Candidate src="/john.jpeg" name="john" key={params.class}/>
-          <Candidate src="/tech-support.jpeg" name="tech-support" key={params.class}/>
-          <Candidate src="/john.jpeg" name="john" key={params.class}/>
-          <Candidate src="/tech-support.jpeg" name="tech-support" key={params.class}/>
+          <Candidate src="/john.jpeg" name="Sigurd" kode={params.class} />
+          <Candidate src="/tech-support.jpeg" name="tech-support" kode={params.class}/>
+          <Candidate src="/john.jpeg" name="john" kode={params.class}/>
+          <Candidate src="/tech-support.jpeg" name="tech-support" kode={params.class}/>
+          <Candidate src="/john.jpeg" name="john" kode={params.class}/>
+          <Candidate src="/tech-support.jpeg" name="tech-support" kode={params.class}/>
         </div>  
     </div>
   )

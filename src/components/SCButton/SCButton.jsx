@@ -1,11 +1,12 @@
 "use client";
 import React from 'react'
 import styles from "./SCButton.module.css"
-import { vote } from "@/backend/firebase.js"
+import { vote, getPeople } from "@/backend/firebase.js"
 
-const SCButton = ({ name, key }) => {
+const SCButton = ({ name, kode }) => {
     async function handleClick() {
-        await vote(name, key)
+        alert(await vote(name, kode))
+        alert(await getPeople())
     }
 
     return (
