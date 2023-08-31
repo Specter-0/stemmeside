@@ -4,9 +4,6 @@ import React from 'react'
 import styles from "./keyInput.module.css"
 import { validate_code } from "../../backend/firebase"
 
-let regexp_num = new RegExp("0-9") 
-let regexp_letters = new RegExp("^0-9")
-
 const KeyInput = () => {
     const [key, setKey] = useState()
 
@@ -16,7 +13,12 @@ const KeyInput = () => {
             alert("invalid code")
             return
         }
-
+        /*
+        else if (!await check_code_in_use(key)) {
+            alert("code is in use")
+            return
+        }
+        */
         window.location = "/candidates/" + String(key.match(/\D/gi)).replaceAll(",", "")+ "/" + String(key.match(/\d/gi)).replaceAll(",", "")
     }
 

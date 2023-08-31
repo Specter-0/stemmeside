@@ -5,8 +5,8 @@ import { vote, getPeople } from "@/backend/firebase.js"
 
 const SCButton = ({ name, kode }) => {
     async function handleClick() {
-        alert(await vote(name, kode))
-        alert(await getPeople())
+        console.log(await vote(name, kode))
+        console.log(await getPeople())
     }
 
     return (
