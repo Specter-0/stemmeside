@@ -8,8 +8,11 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  background-color: white;
   color: black;
+  background-image: url("../../public/background.jpeg.crdownload");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {

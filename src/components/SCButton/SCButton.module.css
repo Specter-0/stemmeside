@@ -22,5 +22,7 @@
 .button:hover {
     border-radius: 20px;
     font-size: 40px;
+    width: 205px;
+    height: 87px;
 }
 

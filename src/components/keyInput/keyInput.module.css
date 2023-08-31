@@ -1,19 +1,37 @@
 .container {
     display: flex;
     flex-direction: column;
-    flex: 1;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
 }
 
 .input {
     width: 30vh;
     height: 10vh;
-    background-color: black;
+    background-image: linear-gradient(90deg, rgb(0, 187, 255), rgb(0, 131, 255));
     border-style: solid;
-    border-color: aqua;
-    border-width: 5px;
+    border-color: transparent;
+    border-width: 0px;
+    border-radius: 100px;
     color: white;
     text-decoration: none;
     font-size: 30px;
+    opacity: 0.8;
+    text-align: center;
+    color: #ffd100;
+    transition: 0.5s;
+}
+
+.input:hover {
+    width: 33vh;
+    height: 11vh;
 }
 
 .submit {

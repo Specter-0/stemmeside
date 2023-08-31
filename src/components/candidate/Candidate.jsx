@@ -14,6 +14,7 @@ const Candidate = ({ src, name, kode }) => {
                 height={250} 
                 className={styles.portrait}
                 />
+                <h1> {name} </h1>
                 <SCButton name={name} kode={String(kode).replace(",", "")}/>
             </div>
         </div>

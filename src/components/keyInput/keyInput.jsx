@@ -9,7 +9,7 @@ const KeyInput = () => {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        if (!await validate_code(key)) {
+        if (!await validate_code(key.toLowerCase())) {
             alert("invalid code")
             return
         }
@@ -19,15 +19,16 @@ const KeyInput = () => {
             return
         }
         */
-        window.location = "/candidates/" + String(key.match(/\D/gi)).replaceAll(",", "")+ "/" + String(key.match(/\d/gi)).replaceAll(",", "")
+        window.location = "/candidates/" + String(key.match(/\D/gi)).replaceAll(",", "").toLowerCase() + "/" + String(key.match(/\d/gi)).replaceAll(",", "").toLowerCase()
     }
 
     return (
         <div className={styles.container}>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className={styles.form}>
                 <input 
                     type="text" 
                     placeholder='Key' 
+                    maxlength="11"
                     value={key}
                     className={styles.input}
                     onChange={e => setKey(e.target.value)}
