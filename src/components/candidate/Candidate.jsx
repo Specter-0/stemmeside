@@ -4,7 +4,6 @@ import SCButton from '../SCButton/SCButton'
 import styles from "./candidate.module.css"
 
 const Candidate = ({ src, name, kode }) => {
-    console.log(kode)
     return (
         <div className={styles.container}>
             <div className={styles.candidate}>

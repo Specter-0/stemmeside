@@ -1,6 +1,5 @@
 import styles from "./votePage.module.css"
 import React from 'react'
-import { useEffect } from "react"
 import Candidate from "@/components/candidate/Candidate"
 import { validate_code } from "@/backend/firebase"
 

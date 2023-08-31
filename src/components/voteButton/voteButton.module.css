@@ -15,10 +15,7 @@
     font-weight: bold;
     transition: 
     ease-out
-    width 1s, 
-    height 1s,
-    font-size 1s,
-    letter-spacing 3s,
+    1s
     ;
 }
 
@@ -26,5 +23,5 @@
     width: 65vh;
     height: 20vh;
     font-size: 95px;
-    letter-spacing: 60px;
+    letter-spacing: 30px;
 }
