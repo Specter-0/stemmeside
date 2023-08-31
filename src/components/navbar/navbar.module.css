@@ -9,10 +9,12 @@
     border-bottom-width: 5px;
     border-color: #FFD100;
     box-shadow: 0px 20px 15px -20px #FFD100;
+    color: rgb(210, 249, 255);
 }
 
 
 .logo {
+    color: inherit;
     font-weight: bold;
     font-size: 40px;
 }

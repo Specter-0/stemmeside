@@ -13,12 +13,6 @@ const KeyInput = () => {
             alert("invalid code")
             return
         }
-        /*
-        else if (!await check_code_in_use(key)) {
-            alert("code is in use")
-            return
-        }
-        */
         window.location = "/candidates/" + String(key.match(/\D/gi)).replaceAll(",", "").toLowerCase() + "/" + String(key.match(/\d/gi)).replaceAll(",", "").toLowerCase()
     }
 
@@ -29,6 +23,7 @@ const KeyInput = () => {
                     type="text" 
                     placeholder='Key' 
                     maxlength="11"
+                    minLength="9"
                     value={key}
                     className={styles.input}
                     onChange={e => setKey(e.target.value)}

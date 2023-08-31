@@ -4,10 +4,18 @@ import Candidate from "@/components/candidate/Candidate"
 import { validate_code, getPeople } from "@/backend/firebase"
 import Burner from "@/components/Burned/Burner"
 
-const people = await getPeople() 
+//const people = await getPeople() 
+
+const people = 
+  {
+    "imst-mp": ["Ayoub", "Samuel"],
+    "im-mp": ["Henriette", "Mary"],
+    "imst-it": ["Kristoffer", "Helena"],
+    "im-it": ["William Arian"]
+  }
+
 
 const votePage = ({ params }) => {  
-
   return (
     <div className={styles.container}>
         <div className={styles.codeContainer}>
@@ -15,7 +23,7 @@ const votePage = ({ params }) => {
           <p> { params.class } </p>
         </div>
         <div className={styles.candidates}>
-          {people.map(cand => (
+          {people[params.class[0]].map(cand => (
             <Candidate 
             src={"/" + cand + ".png"} 
             name={cand} 

@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <div className={styles.container}>
       <div>
-        ©2023 Specter. All rights reserved.
+        ©2023 <strong> Sigurd </strong> Viktor og Prebzi. All rights reserved.
       </div> 
     </div> 
   )
