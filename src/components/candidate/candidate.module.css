@@ -4,7 +4,7 @@
 
 .candidate {
     width: 300px; 
-    height: 450px; 
+    height: 490px; 
     background: linear-gradient(60deg, #ffd100, #ffa100);
     display: flex; 
     flex-direction: column;
@@ -12,6 +12,15 @@
     flex: 1;
     align-items: center;
     justify-content: space-evenly;
+    color: whitesmoke;
+    transition: 0.5s;
+    border-radius: 3px;
+}
+
+.candidate:hover {
+    width: 310px; 
+    height: 500px; 
+    background: linear-gradient(60deg, #ffd100, #00ffdd);
 }
 
 .portrait {

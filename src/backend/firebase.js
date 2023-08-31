@@ -26,6 +26,27 @@ export async function validate_code(kode) {
   return kodeDoc.exists() 
 }
 
+export async function burn_vote(kode) {
+  const koderRef = collection(firestore, "Koder");
+
+  const kodeRef = doc(koderRef, kode);
+  const kodeDoc = await getDoc(kodeRef);
+
+  if (!kodeDoc.exists()) {
+    return "Koden finnes ikke";
+  }
+
+  // slett kode
+  try {
+    await deleteDoc(kodeRef);
+  }
+  catch(error) {
+    return error;
+  }
+
+  return 1;
+}
+
 
 export async function vote(person, kode) {
   const stemmeneRef = collection(firestore, "Stemmene");

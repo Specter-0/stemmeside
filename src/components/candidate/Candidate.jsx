@@ -11,7 +11,7 @@ const Candidate = ({ src, name, kode }) => {
                 src={src}
                 alt={name}
                 width={250} 
-                height={250} 
+                height={300} 
                 className={styles.portrait}
                 />
                 <h1> {name} </h1>

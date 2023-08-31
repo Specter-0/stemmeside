@@ -1,0 +1,16 @@
+.container {
+    margin: 50px;
+}
+
+.Burner {
+    width: 280px;
+    height: 90px;
+    color: whitesmoke;
+    font-size: 30px;
+    font-weight: 700;
+    background-image: linear-gradient(crimson, rgb(220, 20, 20));
+    border: outset;
+    border-width: 5px;
+    border-radius: 2px;
+    border-color: crimson;
+}
