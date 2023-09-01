@@ -7,6 +7,7 @@ const SCButton = ({ name, kode }) => {
     async function handleClick() {
         if (await vote(name, kode) === 1)  {
             window.location = "/"
+            alert("ty for the vote")
         }
         else {
             alert("vote failed")

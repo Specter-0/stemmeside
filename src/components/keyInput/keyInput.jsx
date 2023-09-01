@@ -22,7 +22,7 @@ const KeyInput = () => {
                 <input 
                     type="text" 
                     placeholder='Key' 
-                    maxlength="11"
+                    maxLength="11"
                     minLength="9"
                     value={key}
                     className={styles.input}
